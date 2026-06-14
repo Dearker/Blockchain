@@ -1,0 +1,29 @@
+package com.blockchain.service;
+
+import java.util.List;
+
+/**
+ * K线数据服务接口 - MySQL存储
+ * 固定时间级别：4h、1d、1w
+ * 固定数量：4h-300根、1d-180根、1w-100根
+ *
+ * @author blockchain
+ */
+public interface KlineDataService {
+
+    /**
+     * 同步指定交易对的K线数据到MySQL
+     * 支持增量拉取，保持固定数量的K线
+     * 自动处理4h、1d、1w三个时间级别
+     *
+     * @param symbol 交易对符号，如：BTCUSDT
+     */
+    void syncKlineData(String symbol);
+
+    /**
+     * 同步多个交易对的K线数据到MySQL
+     *
+     * @param symbols 交易对符号列表
+     */
+    void syncKlineData(List<String> symbols);
+}

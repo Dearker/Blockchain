@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blockchain.dao.SpotAnalysisMapper">
+
+    <!--<resultMap id="BaseResultMap" type="com.blockchain.domain.SpotAnalysis">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="moneyType" column="money_type" jdbcType="VARCHAR"/>
+            <result property="timeType" column="time_type" jdbcType="INTEGER"/>
+            <result property="priceLow" column="price_low" jdbcType="DECIMAL"/>
+            <result property="priceHigh" column="price_high" jdbcType="DECIMAL"/>
+            <result property="priceDifferent" column="price_different" jdbcType="DECIMAL"/>
+            <result property="fluctuatePercnt" column="fluctuate_percnt" jdbcType="DECIMAL"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="lowTime" column="low_time" jdbcType="TIMESTAMP"/>
+            <result property="highTime" column="high_time" jdbcType="TIMESTAMP"/>
+            <result property="priceOpen" column="price_open" jdbcType="DECIMAL"/>
+            <result property="amplitude" column="amplitude" jdbcType="DECIMAL"/>
+            <result property="priceLimit" column="price_limit" jdbcType="DECIMAL"/>
+    </resultMap>-->
+
+    <!--<sql id="Base_Column_List">
+        id,money_type,time_type,
+        price_low,price_high,price_different,
+        fluctuate_percnt,create_time,remark,
+        low_time,high_time,price_open,
+        amplitude,price_limit
+    </sql>-->
+
+
+
+
+</mapper>

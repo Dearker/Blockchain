@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: Blockchain
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/blockchain?useUnicode=true&rewriteBatchedStatements=true&characterEncoding=utf-8&useTimezone=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&nullCatalogMeansCurrent=true&autoReconnect=true
+    username: root
+    password:
+
+# K线数据存储路径配置
+# 留空则按操作系统自动选择默认值：
+#   Windows: D:\kdata\lines
+#   macOS:   /Volumes/husky/kdata/lines
+#   Linux:   /tmp/kdata/lines
+# 如需自定义，取消下面一行的注释并修改路径（注意使用正斜杠或双反斜杠）：
+# kline:
+#   data:
+#     path: D:/kdata/lines
+kline:
+  data:
+    path: /Volumes/husky/kdata/lines
+
+server:
+  port: 8000
+
+api:
+  key: 8b90f30e-91b9-468b-9212-b173daddc7e2
+  secretKey: C1C41DF4B84595ED57608013FF23B352
+  passphrase: Asdzxc789.
