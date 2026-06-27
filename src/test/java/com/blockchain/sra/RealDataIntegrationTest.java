@@ -36,7 +36,7 @@ public class RealDataIntegrationTest {
     private static final String DEFAULT_SYMBOL = "BTCUSDT";
 
     /** CSV临时目录 */
-    private static final String DEFAULT_OUTPUT_DIR = "/Volumes/husky/kdata/lines/" + DEFAULT_SYMBOL;
+    private static final String DEFAULT_OUTPUT_DIR = "/Volumes/husky/workspace/Blockchain/doc/kdata/lines/" + DEFAULT_SYMBOL;
 
     public static void main(String[] args) {
         String symbol = DEFAULT_SYMBOL;
