@@ -35,3 +35,7 @@ mvnw
 mvnw.cmd
 .DS_Store
 
+# Re-downloadable Binance archive ZIP cache; canonical CSV snapshots remain auditable.
+doc/kdata/binance/BTCUSDT/replay_v1/.downloads/
+__pycache__/
+*.py[cod]
