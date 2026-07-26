@@ -2,7 +2,6 @@ package com.blockchain;
 
 import cn.hutool.core.thread.ThreadUtil;
 import com.blockchain.domain.SpotAnalysis;
-import com.blockchain.listener.BotMessageListener;
 import com.blockchain.param.SpotQueryParam;
 import com.blockchain.service.OkxMacdService;
 import com.blockchain.service.SpotAnalysisService;
@@ -32,9 +31,6 @@ class BlockchainApplicationTests {
 	@Resource
 	private SpotAnalysisService spotAnalysisService;
 
-	//@Resource
-	private BotMessageListener botMessageListener;
-
 	@Resource
 	private OkxMacdService okxMacdService;
 
@@ -44,11 +40,6 @@ class BlockchainApplicationTests {
 		spotAnalysis.setPriceLow(new BigDecimal("12.32"));
 		spotAnalysis.setPriceHigh(new BigDecimal("12.32"));
 		spotAnalysisService.save(spotAnalysis);
-	}
-
-	@Test
-	public void botTest(){
-		botMessageListener.getFirstMessage();
 	}
 
 	@Test
