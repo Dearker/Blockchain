@@ -1,8 +1,5 @@
 package com.blockchain.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,15 +14,11 @@ import java.time.LocalDateTime;
  *
  * @author blockchain
  */
-@TableName(value = "kline_data")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class KlineData implements Serializable {
-
-    @TableId(type = IdType.AUTO)
-    private Long id;
 
     /**
      * 交易对符号，如：BTCUSDT

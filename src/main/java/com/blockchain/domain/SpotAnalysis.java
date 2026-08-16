@@ -1,8 +1,5 @@
 package com.blockchain.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,18 +9,11 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-/**
- * @TableName spot_analysis
- */
-@TableName(value ="spot_analysis")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class SpotAnalysis implements Serializable {
-
-    @TableId(type = IdType.ASSIGN_ID)
-    private Long id;
 
     /**
      * 开始时间

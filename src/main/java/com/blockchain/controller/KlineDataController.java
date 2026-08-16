@@ -1,6 +1,5 @@
 package com.blockchain.controller;
 
-import com.blockchain.service.KlineDataService;
 import com.blockchain.service.KlineFileService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,27 +23,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class KlineDataController {
 
-    private final KlineDataService klineDataService;
     private final KlineFileService klineFileService;
-
-    /**
-     * 同步K线数据到MySQL
-     * 只需传入交易对名称，自动拉取4h、1d、1w三个时间级别的数据
-     *
-     * @param symbols 交易对符号，多个用逗号分隔，如：BTCUSDT,ETHUSDT
-     * @return 同步结果
-     */
-    @GetMapping("/sync/mysql")
-    public String syncToMysql(@RequestParam String symbols) {
-        try {
-            List<String> symbolList = Arrays.asList(symbols.split(","));
-            klineDataService.syncKlineData(symbolList);
-            return "MySQL数据同步成功，交易对：" + symbols + "，已自动拉取4h(300根)、1d(180根)、1w(100根)";
-        } catch (Exception e) {
-            log.error("MySQL数据同步失败", e);
-            return "MySQL数据同步失败：" + e.getMessage();
-        }
-    }
 
     /**
      * 同步K线数据到本地文件
@@ -62,26 +41,6 @@ public class KlineDataController {
         } catch (Exception e) {
             log.error("文件数据同步失败", e);
             return "文件数据同步失败：" + e.getMessage();
-        }
-    }
-
-    /**
-     * 同时同步到MySQL和文件
-     * 只需传入交易对名称，自动拉取4h、1d、1w三个时间级别的数据
-     *
-     * @param symbols 交易对符号，多个用逗号分隔，如：BTCUSDT,ETHUSDT
-     * @return 同步结果
-     */
-    @GetMapping("/sync/all")
-    public String syncToAll(@RequestParam String symbols) {
-        try {
-            List<String> symbolList = Arrays.asList(symbols.split(","));
-            klineDataService.syncKlineData(symbolList);
-            klineFileService.syncKlineData(symbolList);
-            return "MySQL和文件数据同步成功，交易对：" + symbols + "，已自动拉取4h(300根)、1d(180根)、1w(100根)";
-        } catch (Exception e) {
-            log.error("数据同步失败", e);
-            return "数据同步失败：" + e.getMessage();
         }
     }
 

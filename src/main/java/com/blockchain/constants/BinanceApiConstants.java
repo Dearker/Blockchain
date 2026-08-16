@@ -28,16 +28,6 @@ public class BinanceApiConstants {
     public static final String KLINES_API_URL = BINANCE_FAPI_BASE_URL + KLINES_API_PATH;
 
     /**
-     * 存储类型 - MySQL
-     */
-    public static final String STORAGE_TYPE_MYSQL = "mysql";
-
-    /**
-     * 存储类型 - 文件
-     */
-    public static final String STORAGE_TYPE_FILE = "file";
-
-    /**
      * K线间隔配置
      * key: 时间级别
      * value: 目标K线数量

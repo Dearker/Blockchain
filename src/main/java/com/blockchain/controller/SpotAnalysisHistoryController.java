@@ -5,7 +5,6 @@ import com.blockchain.domain.SpotAnalysisHistory;
 import com.blockchain.param.SpotQueryParam;
 import com.blockchain.service.BinanceService;
 import com.blockchain.service.MacdCalculator;
-import com.blockchain.service.SpotAnalysisHistoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +22,6 @@ public class SpotAnalysisHistoryController {
     private final BinanceService binanceService;
 
     private final MacdCalculator macdCalculator;
-
-    private final SpotAnalysisHistoryService spotAnalysisHistoryService;
 
     /**
      * 获取 BTC 在不同时间级别的 MACD 数据（历史数据）
@@ -47,11 +44,6 @@ public class SpotAnalysisHistoryController {
             }
         }
         return results;
-    }
-
-    @PostMapping("/okMacd")
-    public void getOkMacd(SpotQueryParam spotQueryParam) {
-        spotAnalysisHistoryService.parseData(spotQueryParam);
     }
 
 }
